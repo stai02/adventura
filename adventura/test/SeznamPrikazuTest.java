@@ -1,13 +1,10 @@
-
+import logika.Hra;
+import logika.PrikazPomoc;
+import logika.PrikazZober;
+import logika.SeznamPrikazu;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import logika.Hra;
-import logika.IPrikaz;
-import logika.SeznamPrikazu;
-
-
 import static org.junit.Assert.*;
 
 /*******************************************************************************
@@ -15,50 +12,50 @@ import static org.junit.Assert.*;
  * SeznamPrikazu
  * 
  * @author    Luboš Pavlíček
- * @version   pro školní rok 2016/2017
+ * @version   pro školní rok 2014/2015
  */
 public class SeznamPrikazuTest
 {
+    private Hra hra;
+    private PrikazPomoc prPomoc;
+    private PrikazZober prZober;
+    
     @Before
     public void setUp() {
-        new Hra();
+        hra = new Hra();
+        prPomoc = new PrikazPomoc();
+        prZober = new PrikazZober(hra.getHerniPlan());
     }
 
     @Test
     public void testVlozeniVybrani() {
         SeznamPrikazu seznPrikazu = new SeznamPrikazu();
-		IPrikaz PrikazKoniec = null;
-		seznPrikazu.vlozPrikaz(PrikazKoniec);
-        IPrikaz PrikazVojdi = null;
-		seznPrikazu.vlozPrikaz(PrikazVojdi);
-        assertEquals(PrikazKoniec, seznPrikazu.vratPrikaz("koniec"));
-        assertEquals(PrikazVojdi, seznPrikazu.vratPrikaz("vojdi"));
-        assertEquals(null, seznPrikazu.vratPrikaz("nápoveda"));
+        seznPrikazu.vlozPrikaz(prPomoc);
+        seznPrikazu.vlozPrikaz(prZober);
+        assertEquals(prPomoc, seznPrikazu.vratPrikaz("pomoc"));
+        assertEquals(prZober, seznPrikazu.vratPrikaz("zober"));
+        assertEquals(null, seznPrikazu.vratPrikaz("napoveda"));
     }
     @Test
     public void testJePlatnyPrikaz() {
         SeznamPrikazu seznPrikazu = new SeznamPrikazu();
-        IPrikaz PrikazKoniec = null;
-		seznPrikazu.vlozPrikaz(PrikazKoniec);
-        IPrikaz PrikazVojdi = null;
-		seznPrikazu.vlozPrikaz(PrikazVojdi);
-        assertEquals(true, seznPrikazu.jePlatnyPrikaz("koniec"));
-        assertEquals(true, seznPrikazu.jePlatnyPrikaz("vojdi"));
-        assertEquals(false, seznPrikazu.jePlatnyPrikaz("nápoveda"));
+        seznPrikazu.vlozPrikaz(prPomoc);
+        seznPrikazu.vlozPrikaz(prZober);
+        assertEquals(true, seznPrikazu.jePlatnyPrikaz("pomoc"));
+        assertEquals(true, seznPrikazu.jePlatnyPrikaz("zober"));
+        assertEquals(false, seznPrikazu.jePlatnyPrikaz("napoveda"));
         assertEquals(false, seznPrikazu.jePlatnyPrikaz("Konec"));
     }
     
     @Test
     public void testNazvyPrikazu() {
         SeznamPrikazu seznPrikazu = new SeznamPrikazu();
-        IPrikaz PrikazKoniec = null;
-		seznPrikazu.vlozPrikaz(PrikazKoniec);
-        IPrikaz PrikazVojdi = null;
-		seznPrikazu.vlozPrikaz(PrikazVojdi);
+        seznPrikazu.vlozPrikaz(prPomoc);
+        seznPrikazu.vlozPrikaz(prZober);
         String nazvy = seznPrikazu.vratNazvyPrikazu();
-        assertEquals(true, nazvy.contains("koniec"));
-        assertEquals(true, nazvy.contains("vojdi"));
-        assertEquals(false, nazvy.contains("nápoveda"));
+        assertEquals(true, nazvy.contains("pomoc"));
+        assertEquals(true, nazvy.contains("zober"));
+        assertEquals(false, nazvy.contains("napoveda"));
         assertEquals(false, nazvy.contains("Konec"));
     }
     

@@ -35,7 +35,8 @@ public class SeznamPrikazu {
      *@param  prikaz  Instance třídy implementující rozhraní IPrikaz
      */
     public void vlozPrikaz(IPrikaz prikaz) {
-        mapaSPrikazy.put(prikaz.getNazev(),prikaz);
+        if (prikaz != null) {mapaSPrikazy.put(prikaz.getNazev(),prikaz);
+        }
     }
     
     /**
