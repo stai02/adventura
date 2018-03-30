@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=PrikazPouzi
+comment0.text=\r\n\ \ Trieda\ PrikazPouzi\ implementuje\ pre\ hru\ pr\u00EDkaz\ pou\u017Ei.\r\n\ \ T\u00E1to\ trieda\ je\ s\u00FA\u010Das\u0165ou\ jednoduchej\ textovej\ hry.\ \r\n\ \ \r\n@author\ \ \ \ \ Ivana\ Stanov\u00E1\ \r\n@version\ \ \ \ pre\ ZS\ 2017/2018\r\n
+comment1.params=plan\ hra
+comment1.target=PrikazPouzi(HerniPlan,\ Hra)
+comment1.text=\r\n\ \ Kon\u0161truktor\ triedy\r\n\ \ \r\n\ \ @param\ plan\ hern\u00FD\ pl\u00E1n,\ kde\ budete\ pou\u017E\u00EDva\u0165\ veci.\r\n
+comment2.params=parametry
+comment2.target=java.lang.String\ provedPrikaz(java.lang.String[])
+comment2.text=\r\n\ \ Vykon\u00E1\ pr\u00EDkaz\ "pou\u017Ei".\ Pou\u017Eije\ predmet\ z\ batoha,\r\n\ \ ak\ batoh\ nie\ je\ pr\u00E1zdny\ a\ zadan\u00FD\ predmet\ sa\ v\ \u0148om\ nach\u00E1dza.\r\n\ \ \r\n@param\ parametry\ -\ ako\ \ parameter\ obsahuje\ n\u00E1zov\ predmetu,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ktor\u00FD\ sa\ m\u00E1\ pou\u017Ei\u0165.\r\n@return\ spr\u00E1va,\ ktor\u00FA\ vyp\u00ED\u0161e\ hra\ hr\u00E1\u010Dovi\r\n
+comment3.params=
+comment3.target=java.lang.String\ getNazev()
+comment3.text=\r\n\ \ Metoda\ vrac\u00ED\ n\u00E1zev\ p\u0159\u00EDkazu\ (slovo\ kter\u00E9\ pou\u017E\u00EDv\u00E1\ hr\u00E1\u010D\ pro\ jeho\ vyvol\u00E1n\u00ED)\r\n\ \ \r\n\ \ @\ return\ nazev\ prikazu\r\n
+numComments=4

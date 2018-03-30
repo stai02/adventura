@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Batoh
+comment0.text=\r\n\ Trieda\ Batoh\ -\ popisuje\ jednotliv\u00E9\ veci\ v\ batohu\r\n\r\n\ Tato\ trieda\ je\ s\u00FA\u010Das\u0165ou\ jednoduchej\ textovej\ hry.\r\n\ \r\n\ Trieda\ Batoh\ sl\u00FA\u017Ei\ na\ ukladanie\ vec\u00ED\ do\ batoha.\r\n\ Veci\ z\ batoha\ m\u00F4\u017Eete\ pou\u017Ei\u0165\ alebo\ vyhodi\u0165.\ \r\n\r\n\ @author\ \ \ Ivana\ Stanov\u00E1\r\n\ @version\ \ pre\ ZS\ 2017/2018\r\n
+comment1.params=
+comment1.target=Batoh()
+comment1.text=\r\n\ Kon\u0161truktory\ objektov\ triedy\ Batoh.\r\n
+comment2.params=nazov\ vec
+comment2.target=void\ pridajDoBatoha(java.lang.String,\ Vec)
+comment2.text=\r\n\ Met\u00F3da\ prid\u00E1\ dan\u00FA\ vec\ do\ batoha.\r\n\r\n\ @param\ \ \ vec\ \ Vec,\ ktor\u00E1\ sa\ m\u00E1\ prida\u0165\ do\ batoha\r\n
+comment3.params=nazov
+comment3.target=Vec\ vyberZBatoha(java.lang.String)
+comment3.text=\r\n\ Met\u00F3da\ vyberie\ dan\u00FA\ vec\ do\ batoha.\r\n\r\n\ @param\ \ \ vec\ \ Vec,\ ktor\u00E1\ sa\ m\u00E1\ vybra\u0165\ do\ batoha\r\n
+comment4.params=
+comment4.target=boolean\ jePlny()
+comment4.text=\r\n\ Met\u00F3da\ vyberie\ dan\u00FA\ vec\ do\ batoha.\r\n\r\n\ @param\ \ \ vec\ \ Vec,\ ktor\u00E1\ sa\ m\u00E1\ vybra\u0165\ do\ batoha\r\n
+comment5.params=
+comment5.target=java.lang.String\ vypisObsahBatoha()
+comment5.text=\r\n\ \ Met\u00F3da\ vracia\ text\ s\ obsahom\ batoha\r\n\r\n@return\ \ \ text\ s\ vecami\ v\ batohu\r\n
+comment6.params=nazov
+comment6.target=boolean\ jeVecVBatohu(java.lang.String)
+comment6.text=\r\n\ \ Met\u00F3da\ zist\u00ED,\ \u010Di\ je\ vec\ v\ batohu\r\n\r\n@return\ \ false,\ ak\ vec\ nie\ je\ v\ batohu\r\n
+numComments=7

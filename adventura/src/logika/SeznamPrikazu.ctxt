@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=SeznamPrikazu
+comment0.text=\r\n\ \ Class\ SeznamPrikazu\ -\ eviduje\ seznam\ p\u0159\u00EDpustn\u00FDch\ p\u0159\u00EDkaz\u016F\ adventury.\r\n\ \ Pou\u017E\u00EDv\u00E1\ se\ pro\ rozpozn\u00E1v\u00E1n\u00ED\ p\u0159\u00EDkaz\u016F\r\n\ \ a\ vr\u00E1cen\u00ED\ odkazu\ na\ t\u0159\u00EDdu\ implementuj\u00EDc\u00ED\ konkr\u00E9tn\u00ED\ p\u0159\u00EDkaz.\r\n\ \ Ka\u017Ed\u00FD\ nov\u00FD\ p\u0159\u00EDkaz\ (instance\ implementuj\u00EDc\u00ED\ rozhran\u00ED\ Prikaz)\ se\r\n\ \ mus\u00ED\ do\ seznamu\ p\u0159idat\ metodou\ vlozPrikaz.\r\n\r\n\ \ Tato\ t\u0159\u00EDda\ je\ sou\u010D\u00E1st\u00ED\ jednoduch\u00E9\ textov\u00E9\ hry.\r\n\r\n@author\ \ \ \ \ Michael\ Kolling,\ Lubos\ Pavlicek,\ Jarmila\ Pavlickova\r\n@version\ \ \ \ pro\ \u0161koln\u00ED\ rok\ 2016/2017\r\n
+comment1.params=
+comment1.target=SeznamPrikazu()
+comment1.text=\r\n\ Konstruktor\r\n
+comment2.params=prikaz
+comment2.target=void\ vlozPrikaz(IPrikaz)
+comment2.text=\r\n\ Vkl\u00E1d\u00E1\ nov\u00FD\ p\u0159\u00EDkaz.\r\n\r\n@param\ \ prikaz\ \ Instance\ t\u0159\u00EDdy\ implementuj\u00EDc\u00ED\ rozhran\u00ED\ IPrikaz\r\n
+comment3.params=retezec
+comment3.target=IPrikaz\ vratPrikaz(java.lang.String)
+comment3.text=\r\n\ Vrac\u00ED\ odkaz\ na\ instanci\ t\u0159\u00EDdy\ implementuj\u00EDc\u00ED\ rozhran\u00ED\ IPrikaz,\r\n\ kter\u00E1\ prov\u00E1d\u00ED\ p\u0159\u00EDkaz\ uveden\u00FD\ jako\ parametr.\r\n\r\n@param\ \ retezec\ \ kl\u00ED\u010Dov\u00E9\ slovo\ p\u0159\u00EDkazu,\ kter\u00FD\ chce\ hr\u00E1\u010D\ zavolat\r\n@return\ \ \ \ \ \ \ \ \ \ instance\ t\u0159\u00EDdy,\ kter\u00E1\ provede\ po\u017Eadovan\u00FD\ p\u0159\u00EDkaz\r\n
+comment4.params=retezec
+comment4.target=boolean\ jePlatnyPrikaz(java.lang.String)
+comment4.text=\r\n\ Kontroluje,\ zda\ zadan\u00FD\ \u0159et\u011Bzec\ je\ p\u0159\u00EDpustn\u00FD\ p\u0159\u00EDkaz.\r\n\r\n@param\ \ retezec\ \ \u0158et\u011Bzec,\ kter\u00FD\ se\ m\u00E1\ otestovat,\ zda\ je\ p\u0159\u00EDpustn\u00FD\ p\u0159\u00EDkaz\r\n@return\ \ \ \ \ \ \ \ \ \ Vrac\u00ED\ hodnotu\ true,\ pokud\ je\ zadan\u00FD\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \u0159et\u011Bzec\ p\u0159\u00EDpustn\u00FD\ p\u0159\u00EDkaz\r\n
+comment5.params=
+comment5.target=java.lang.String\ vratNazvyPrikazu()
+comment5.text=\r\n\ \ Vrac\u00ED\ seznam\ p\u0159\u00EDpustn\u00FDch\ p\u0159\u00EDkaz\u016F,\ jednotliv\u00E9\ p\u0159\u00EDkazy\ jsou\ odd\u011Bleny\ mezerou.\r\n\ \ \r\n\ \ @return\ \ \ \ \ \u0158et\u011Bzec,\ kter\u00FD\ obsahuje\ seznam\ p\u0159\u00EDpustn\u00FDch\ p\u0159\u00EDkaz\u016F\r\n
+numComments=6

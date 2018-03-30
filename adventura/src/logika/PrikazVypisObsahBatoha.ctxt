@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=PrikazVypisObsahBatoha
+comment0.text=\r\n\ \ Trieda\ PrikazVypisObsahBatoha\ implementuje\ pre\ hru\ pr\u00EDkaz\ vyp\u00ED\u0161.\r\n\ \ T\u00E1to\ trieda\ je\ s\u00FA\u010Das\u0165ou\ jednoduchej\ textovej\ hry.\ \r\n\ \ \r\n@author\ \ \ \ \ Ivana\ Stanov\u00E1\ \r\n@version\ \ \ \ pre\ ZS\ 2017/2018\r\n
+comment1.params=plan
+comment1.target=PrikazVypisObsahBatoha(HerniPlan)
+comment1.text=\r\n\ \ Kon\u0161truktor\ triedy\ PrikazVypisObsahBatoha\r\n\ \ \r\n\ \ @param\ plan\ hern\u00FD\ pl\u00E1n,\ kde\ hra\ prebieha.\r\n
+comment2.params=parametry
+comment2.target=java.lang.String\ provedPrikaz(java.lang.String[])
+comment2.text=\r\n\ \ Vykon\u00E1\ pr\u00EDkaz\ "vyp\u00ED\u0161\ obsah\ batoha".\ \ \r\n\r\n@param\ parametry\ -\ ak\ parameter\ je\ batoh,\ vyp\u00ED\u0161e\ sa\ jeho\ obsah\ \r\n\r\n@return\ zpr\u00E1va,\ kterou\ vyp\u00ED\u0161e\ hra\ hr\u00E1\u010Di\r\n
+comment3.params=
+comment3.target=java.lang.String\ getNazev()
+comment3.text=\r\n\ \ Metoda\ vrac\u00ED\ n\u00E1zev\ p\u0159\u00EDkazu\ (slovo\ kter\u00E9\ pou\u017E\u00EDv\u00E1\ hr\u00E1\u010D\ pro\ jeho\ vyvol\u00E1n\u00ED)\r\n\ \ \r\n\ \ @\ return\ nazev\ prikazu\r\n
+numComments=4
