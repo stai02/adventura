@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml" fx:controller="ui.Controller">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.79999999999995" minWidth="10.0" prefWidth="254.99998779296874" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0000396728515" minWidth="0.0" prefWidth="267.00001220703126" />
@@ -28,7 +28,7 @@
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
          <children>
             <Label text="Vstup" />
-            <TextField fx:id="vstupniText" promptText="Zadajte príkaz" />
+            <TextField fx:id="vstupniText" onAction="#odeslaniPrikazu" promptText="Zadajte príkaz" />
             <Label text="Výstup" />
             <TextArea fx:id="textovePole" editable="false" prefHeight="136.0" prefWidth="394.0" VBox.vgrow="NEVER" />
          </children>

@@ -1,16 +1,18 @@
 package ui;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 import logika.Hra;
 import logika.IHra;
 
-public class Controller extends VBox {
+
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+
+
+public class Controller extends GridPane {
 	
-	@FXML public Button promenna;
+	IHra hra = new Hra();
 	
 	@FXML private TextField vstupniText;
 	
@@ -18,13 +20,18 @@ public class Controller extends VBox {
 	
 	@FXML public void odeslaniPrikazu() {
 		String prikaz = vstupniText.getText();
-		String odpoved = 
+		String odpoved =
 				hra.zpracujPrikaz(prikaz);
 		textovePole.appendText(odpoved);
+		vstupniText.setText("");
 	}
 	
-	@FXML
+	@FXML 
 	public void ovladacUdalosti() {
 		
 	}
+	public void inicializuj(IHra hra) {
+		
+	}
+
 }
