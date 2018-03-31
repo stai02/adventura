@@ -34,6 +34,10 @@ class PrikazKomunikuj implements IPrikaz {
         if (parametry.length == 0) {
             // pokiaľ chýba druhé slovo (postava), tak ....
             return "S kým sa mám rozprávať? Musíte zadať meno postavy.";
+        } 
+        
+        if (parametry.length == 1) {
+        	return "Taká postava tu nie je.";
         }
         
         String komunikant = parametry[0] + " " + parametry[1];
