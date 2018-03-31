@@ -1,8 +1,6 @@
 package ui;
 
 
-import java.io.IOException;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,7 +10,7 @@ import logika.IHra;
 
 public class Application extends javafx.application.Application {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		if (args.length == 0) {
 			launch(args);
 		} else {
@@ -34,7 +32,7 @@ public class Application extends javafx.application.Application {
 				.getResource("Home.fxml"));
 		Parent root = loader.load();
 		
-		loader.getController();
+		Controller c = loader.getController();
 		
 				
 		primaryStage.setTitle("title");
