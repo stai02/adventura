@@ -34,33 +34,35 @@ class PrikazKomunikuj implements IPrikaz {
         if (parametry.length == 0) {
             // pokiaľ chýba druhé slovo (postava), tak ....
             return "S kým sa mám rozprávať? Musíte zadať meno postavy.";
+        } 
+        
+        if (parametry.length == 1) {
+        	return "Taká postava tu nie je.";
         }
         
         String komunikant = parametry[0] + " " + parametry[1];
         Postava postava = plan.najdiPostavu(komunikant);
         
-        if( postava.getMeno().equals("Duch Dušan") ||  postava.getMeno().equals("Gróf Drakula")) {
-        	if (plan.getAktualniProstor().getNazov().equals("skrinky") && 
-        			postava.getMeno().equals("Duch Dušan") &&
-        			plan.getBatoh().jeVecVBatohu("medicinbal")) {
-        		return "Vezmi si medicinbal, možno sa zíde v nebezpečenstve ...";          
-        	} else if (plan.getAktualniProstor().getNazov().equals("toalety") && 
-        			postava.getMeno().equals("Duch Dušan") && (
-        					plan.getBatoh().jeVecVBatohu("cesnak") || 
-        					plan.getBatoh().jeVecVBatohu("paradajka"))) {
-        		return "Láska ide cez žalúdok.\n"+
-        				"Upír nemusí uhasiť hlad práve tebou.\n"+
-        				"V bufete nájdeš to, čo nasýti upírov hlad.\n"+
-        				"Inak ho budeš musieť poraziť v súboji.";            
-        	} else if (plan.getAktualniProstor().getNazov().equals("prízemie") && 
+        if (plan.getAktualniProstor().getNazov().equals("skrinky") && 
+            postava.getMeno().equals("Duch Dušan") &&
+            plan.getBatoh().jeVecVBatohu("medicinbal")) {
+            return "Vezmi si medicinbal, možno sa zíde v nebezpečenstve ...";          
+        } else if (plan.getAktualniProstor().getNazov().equals("toalety") && 
+                   postava.getMeno().equals("Duch Dušan") && (
+                   plan.getBatoh().jeVecVBatohu("cesnak") || 
+                   plan.getBatoh().jeVecVBatohu("paradajka"))) {
+            return "Láska ide cez žalúdok.\n"+
+            "Upír nemusí uhasiť hlad práve tebou.\n"+
+            "V bufete nájdeš to, čo nasýti upírov hlad.\n"+
+            "Inak ho budeš musieť poraziť v súboji.";            
+        } else if (plan.getAktualniProstor().getNazov().equals("prízemie") && 
                     postava.getMeno().equals("Gróf Drakula") &&
                     plan.getBatoh().jeVecVBatohu("kľúč")) {
             return "Zjem ťa ! Z tejto školy neutečieš.";            
-        	} else {
-        		return postava.getReplika();
-        	} 
-        } else {
+        } else if(postava == null) {
             return "Taká postava tu nie je.";
+        } else {
+            return postava.getReplika();
         }
     }
     
