@@ -1,7 +1,6 @@
 package ui;
 
 
-import java.io.IOException;
 import java.util.Scanner;
 import logika.IHra;
 /**
@@ -19,6 +18,7 @@ import logika.IHra;
 
 public class TextoveRozhrani {
     private IHra hra;
+	private Scanner scanner;
 
     /**
      *  Vytváří hru.
@@ -33,7 +33,7 @@ public class TextoveRozhrani {
      *  hodnotu true). Nakonec vypíše text epilogu.
      * @throws IOException 
      */
-    public void hraj() throws IOException {
+    public void hraj() {
         System.out.println(hra.vratUvitani());
 
         // základní cyklus programu - opakovaně se čtou příkazy a poté
@@ -53,7 +53,7 @@ public class TextoveRozhrani {
      *@return    Vrací přečtený příkaz jako instanci třídy String
      */
     private String prectiString() {
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         System.out.print("> ");
         return scanner.nextLine();
     }
