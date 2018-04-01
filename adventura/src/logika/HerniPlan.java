@@ -1,6 +1,7 @@
 package logika;
 
 import java.util.Map;
+import java.util.Observable;
 import java.util.HashMap;
 
 /**
@@ -14,8 +15,7 @@ import java.util.HashMap;
  *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
  *@version    1.8.0_121
  */
-public class HerniPlan {
-
+public class HerniPlan extends Observable {
     private Prostor aktualniProstor;
     private Map<String, Postava> zoznamPostav; // obsahuje zoznam postáv v hre
     private Map<String, Prostor> zoznamMiestnosti; // obsahuje zoznam miestností v hre
@@ -32,9 +32,11 @@ public class HerniPlan {
      *  Vytvára jednotlivé postavy, veci a umiestňuje ich do miestností.
      */
     public HerniPlan() {
+    	
+ 	
         // vytvářejí se jednotlivé prostory        
         zoznamMiestnosti = new HashMap<String, Prostor>();
-
+        
         Prostor stvrtaC = new Prostor("4.C","4.C, je to vaša trieda",true);
         Prostor poschodie = new Prostor("prvé poschodie", "chodba na prvom poschodí Vašej strednej školy",true);
         Prostor zborovna = new Prostor("zborovňa","zborovňa, hlavné sídlo učiteľského zboru",false);
@@ -151,7 +153,9 @@ public class HerniPlan {
      *@param  prostor nový aktuální prostor
      */
     public void setAktualniProstor(Prostor prostor) {
-        this.aktualniProstor = prostor;       
+        this.aktualniProstor = prostor;    
+        this.setChanged();
+        this.notifyObservers();
     } 
 
     /**

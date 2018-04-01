@@ -151,7 +151,7 @@ public class Prostor {
      *
      *@return Popis východů - názvů sousedních prostorů
      */
-    private String popisVychodu() {
+    public String popisVychodu() {
         String vracenyText = "Východy:\n";
         for (Prostor sousedni : vychody) {
             if (sousedni.viditelna) {

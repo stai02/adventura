@@ -2,7 +2,12 @@ package ui;
 
 import logika.Hra;
 import logika.IHra;
+import java.util.Observable;
+import java.util.Observer;
+
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
@@ -12,23 +17,24 @@ import javafx.scene.layout.GridPane;
 
 
 
-public class HomeController extends GridPane {
+public class HomeController extends GridPane implements Observer {
 	
-	/*javafx.scene.image.Image(InputStream is);*/
-
 	IHra hra = new Hra();
-	/*HerniPlan plan = new HerniPlan();*/
 	
 	@FXML private TextField vstupniText;
 	@FXML private TextArea textovePole;
-	@FXML private TextArea postavy;
-	@FXML private TextArea vychody;
+	@FXML private ListView<String> seznamMistnosti;
+	@FXML private ListView<String> seznamPostav;
+	@FXML private ListView<String> seznamVeci;
 
 	@FXML private MenuItem novahra;
 	@FXML private MenuItem koniec;
 	@FXML private MenuItem napoveda;
     @FXML private ImageView mapa;
 
+    @FXML private Button button;
+
+    
 	@FXML private ImageView batoh1;
     @FXML private ImageView batoh2;
     @FXML private ImageView batoh3;
@@ -48,13 +54,13 @@ public class HomeController extends GridPane {
 		}
 	}
 		
+		
 	@FXML 
 	public void ovladacUdalosti() {
-		/*novahra.setOnAction(this::novaHra);*/
-		/*koniec.setO
-		koniec.setOnAction(e -> {vychody.setText("KONIEC");});
-		napoveda.setOnAction(this::ukazNapovedu);*/
+
 	}
+	
+	
 	
 /*	private void ukazNapovedu(ActionEvent event) {
 		String helpURL = hra.vratEpilog();
@@ -73,7 +79,21 @@ public class HomeController extends GridPane {
 	
 	
 	public void inicializuj(IHra hra) {
-
+		this.hra = hra;
+	    textovePole.setText(hra.vratUvitani());
+		seznamMistnosti.getItems().addAll(hra.getHerniPlan().getAktualniProstor().popisVychodu());
+		seznamPostav.getItems().addAll(hra.getHerniPlan().popisPostavVMiestnosti());
+		seznamVeci.getItems().add(hra.getHerniPlan().getAktualniProstor().popisVeciVMiestnosti());
+		hra.getHerniPlan().addObserver(this);
 	}
 
+	@Override
+	public void update(Observable o, Object arg) {
+		seznamMistnosti.getItems().clear();
+		seznamPostav.getItems().clear();
+		seznamVeci.getItems().clear();
+		seznamMistnosti.getItems().addAll(hra.getHerniPlan().getAktualniProstor().popisVychodu());
+		seznamPostav.getItems().addAll(hra.getHerniPlan().popisPostavVMiestnosti());
+		seznamVeci.getItems().add(hra.getHerniPlan().getAktualniProstor().popisVeciVMiestnosti());
+	}
 }
