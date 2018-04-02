@@ -55,9 +55,7 @@ public class HomeController extends GridPane implements Observer {
     @FXML private Rectangle bufet;
     @FXML private Menu menu;
 
-	/*Image image = new Image(getResourceAsStream(getResourceAsStream("@../../resources/mapa.PNG"));
-	Button button = new Button("",new ImageView(image));*/
-    
+	
 	@FXML public void odeslaniPrikazu() throws MalformedURLException {
 		String prikaz = vstupniText.getText();
 		if (prikaz.equals("nápoveda")) {
@@ -103,7 +101,7 @@ public class HomeController extends GridPane implements Observer {
 	
 	@FXML 
 	public void zobrazNapovedu() throws MalformedURLException {
-		File myFile = new File ("C:\\Users\\Ivanka\\git\\adventura\\src\\ui\\napoveda.html");
+		File myFile = new File ("C:\\Users\\Ivanka\\git\\adventura\\resources\\main\\napoveda.html");
 		URL helpURL = myFile.toURI().toURL();
 		WebView webView = new WebView();
 		WebEngine engine = webView.getEngine();
@@ -149,52 +147,44 @@ public class HomeController extends GridPane implements Observer {
 		position.setText(hra.getHerniPlan().getAktualniProstor().getNazov());
 		batoh.getChildren().clear();
 		if (hra.getHerniPlan().getBatoh().jeVecVBatohu("paradajka")) {
-			if (!batoh.getChildren().contains(batoh2)) {
 				ImageView batoh2 = new ImageView();
 				batoh2.setFitHeight(100);
 				batoh2.setFitWidth(100);
 				batoh.getChildren().add(batoh2);
-				Image image = new Image(getClass().getResource("paradajka.PNG").toExternalForm());
+				Image image = new Image(getClass().getResourceAsStream("paradajka.PNG"));
 				batoh2.setImage(image);
 				Tooltip para = new Tooltip("Paradajka");
 				Tooltip.install(batoh2, para);
-			}
 		}
 		if (hra.getHerniPlan().getBatoh().jeVecVBatohu("cesnak")) {
-			if (!batoh.getChildren().contains(batoh3)) {
 				ImageView batoh3 = new ImageView();
 				batoh3.setFitHeight(100);
 				batoh3.setFitWidth(100);
 				batoh.getChildren().add(batoh3);
-				Image image = new Image(getClass().getResource("cesnak.PNG").toExternalForm());
+				Image image = new Image(getClass().getResourceAsStream("cesnak.PNG"));
 				batoh3.setImage(image);
 				Tooltip cesn = new Tooltip("Cesnak");
 				Tooltip.install(batoh3, cesn);
-			}
 		}
 		if (hra.getHerniPlan().getBatoh().jeVecVBatohu("medicinbal")) {
-			if (!batoh.getChildren().contains(batoh1)) {
 				ImageView batoh1 = new ImageView();
 				batoh1.setFitHeight(100);
 				batoh1.setFitWidth(100);
 				batoh.getChildren().add(batoh1);
-				Image image = new Image(getClass().getResource("medicinbal.PNG").toExternalForm());
+				Image image = new Image(getClass().getResourceAsStream("medicinbal.PNG"));
 				batoh1.setImage(image);
 				Tooltip medi = new Tooltip("Medicinbal");
 				Tooltip.install(batoh1, medi);
-			}
 		}
 		if (hra.getHerniPlan().getBatoh().jeVecVBatohu("kluc")) {
-			if (!batoh.getChildren().contains(batoh4)) {
 				ImageView batoh4 = new ImageView();
 				batoh4.setFitHeight(100);
 				batoh4.setFitWidth(100);
 				batoh.getChildren().add(batoh4);
-				Image image = new Image(getClass().getResource("kluc.PNG").toExternalForm());
+				Image image = new Image(getClass().getResourceAsStream("kluc.PNG"));
 				batoh4.setImage(image);
 				Tooltip kluc = new Tooltip("Kľúč");
 				Tooltip.install(batoh4, kluc);
-			}
 		}
 		seznamMistnosti.getItems().clear();
 		seznamVeci.getItems().clear();

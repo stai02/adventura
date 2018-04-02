@@ -275,17 +275,15 @@ public class Prostor {
      *@return   zoznam názvov vecí v miestnosti
      */
     public String popisVeciVMiestnosti() {
-        String vysledok = " ";
+        String vysledok = "";
         Set<String> mnozinaKlucov = zoznamVeci.keySet();
-        for (String kluc : mnozinaKlucov) {
-            vysledok += zoznamVeci.get(kluc).getNazov() + " ";
-        }
-
-        if (vysledok.equals(" ")) {
-            return "V miestnosti nič nie je.";           
-        }
-        else {
-            return "V miestnosti ste uvideli tieto predmety:\n" + vysledok;           
+        if (!mnozinaKlucov.isEmpty()) {
+        	for (String kluc : mnozinaKlucov) {
+        		vysledok += zoznamVeci.get(kluc).getNazov() + " ";
+        	}
+        	return "V miestnosti ste uvideli tieto predmety:\n" + vysledok; 
+        } else {
+            return "V miestnosti nič nie je.";                                 
         }
     }  
 
