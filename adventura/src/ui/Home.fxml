@@ -8,7 +8,6 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.ImageInput?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -17,9 +16,8 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 
-<GridPane fx:id="square" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.HomeController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.HomeController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="688.8000122070313" minWidth="10.0" prefWidth="688.8000122070313" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="427.20001220703125" minWidth="0.0" prefWidth="311.9999877929687" />
@@ -103,9 +101,9 @@
         <menus>
           <Menu id="menu" fx:id="menu" mnemonicParsing="false" text="Menu">
             <items>
-              <MenuItem fx:id="novahra" mnemonicParsing="false" text="Nová hra" />
-                  <MenuItem fx:id="napoveda" mnemonicParsing="false" text="Nápoveda" />
-                  <MenuItem fx:id="koniec" mnemonicParsing="false" text="Koniec" />
+              <MenuItem fx:id="novahra" mnemonicParsing="false" onAction="#ovladacUdalosti" text="Nová hra" />
+                  <MenuItem fx:id="napoveda" mnemonicParsing="false" onAction="#zobrazNapovedu" text="Nápoveda" />
+                  <MenuItem fx:id="koniec" mnemonicParsing="false" onAction="#ukoncenieHry" text="Koniec" />
             </items>
           </Menu>
         </menus>
@@ -134,14 +132,5 @@
             </VBox>
          </children>
       </VBox>
-      <Rectangle fill="DODGERBLUE" height="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="30.0">
-         <effect>
-            <ImageInput>
-               <source>
-                  <Image url="file:/C:/Users/Ivanka/git/adventura/src/ui/ikona.jpg" />
-               </source>
-            </ImageInput>
-         </effect>
-      </Rectangle>
-   </children>
+     </children>
 </GridPane>

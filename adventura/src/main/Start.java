@@ -48,7 +48,7 @@ public class Start extends Application
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("../ui/Home.fxml"));
 		Parent root = loader.load();
-
+		
 		HomeController controller = loader.getController();
 		IHra hra = new Hra();
 		controller.inicializuj(hra);
