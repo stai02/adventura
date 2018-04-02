@@ -166,7 +166,7 @@ public class HerniPlan extends Observable {
     public String popisPostavVMiestnosti() {
         String vysledok = "";
         for (Postava postava : zoznamPostav.values()) {
-            if (postava.getAktMiestnost() == aktualniProstor) {
+            if (postava.getAktMiestnost().equals(aktualniProstor)) {
                 vysledok += postava.getMeno() +"\n";                            
             }
         }

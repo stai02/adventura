@@ -1,6 +1,7 @@
 package logika;
 
 import java.util.Map;
+import java.util.Observable;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -15,7 +16,7 @@ import java.util.Set;
  * @author   Ivana Stanová
  * @version  pre ZS 2017/2018
  */
-public class Batoh
+public class Batoh extends Observable
 {
     private Map<String, Vec> batoh; //obsahuje veci v batohu  
     private static final int MAX_POCET = 3; // obmedzenie veľkosti batoha
@@ -37,6 +38,8 @@ public class Batoh
     {
         if (batoh.size() < MAX_POCET) {
             batoh.put(nazov,vec);
+            this.setChanged();
+            this.notifyObservers();
         }
         else {
             System.out.println("Batoh je plný.");
@@ -53,6 +56,8 @@ public class Batoh
         if (batoh.size() > 0) {
             Vec vec = batoh.get(nazov);
             batoh.remove(nazov);
+            this.setChanged();
+            this.notifyObservers();
             return vec;
         } 
         return null;        

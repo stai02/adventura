@@ -87,11 +87,11 @@ class PrikazVojdi implements IPrikaz {
             
                 // pripraví sa rozhovor s duchom v skrinkách
                 if (sousedniProstor.getNazov().equals("skrinky")) { 
-                plan.vratPostava("Duch Dušan").setAktMiestnost(sousedniProstor);
+                plan.vratPostava("Duch Dušan").setAktMiestnost(sousedniProstor);          
                 }
                 
                 // pripraví sa finálna konfrontácia s upírom        
-                if (plan.getBatoh().jeVecVBatohu("kľúč") &&
+                if (plan.getBatoh().jeVecVBatohu("kľúč") &
                     sousedniProstor.getNazov().equals("prízemie")) {
                     plan.vratPostava("Gróf Drakula").setAktMiestnost(plan.vratMiestnost("prízemie"));
                     doplnujuciText = "Keď ste sa chystali odomknúť východ zo školy,vyskočil na Vás upír.\n"

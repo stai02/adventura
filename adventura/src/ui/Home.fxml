@@ -52,48 +52,37 @@
          <children>
             <Label text="Obsah batoha">
                <VBox.margin>
-                  <Insets bottom="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="5.0" right="5.0" top="40.0" />
                </VBox.margin>
             </Label>
-            <HBox prefHeight="54.0" prefWidth="317.0">
+            <HBox fx:id="batoh" prefHeight="100.0" prefWidth="300.0">
                <children>
-                  <ImageView fx:id="batoh1" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@kluc.PNG" />
-                     </image>
-                  </ImageView>
                   <Region />
-                  <ImageView fx:id="batoh2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@paradajka.PNG" />
-                     </image>
-                  </ImageView>
                   <Region />
-                  <ImageView fx:id="batoh3" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@cesnak.PNG" />
-                     </image>
-                  </ImageView>
                </children>
-            </HBox>
-            <Label text="Postavy v miestnosti">
-               <VBox.margin>
-                  <Insets bottom="5.0" right="5.0" top="10.0" />
-               </VBox.margin>
-            </Label>
-            <ListView fx:id="seznamPostav" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets right="10.0" />
-               </VBox.margin></ListView>
+               </VBox.margin>
+            </HBox>
             <Label text="Veci v miestnosti">
                <VBox.margin>
                   <Insets bottom="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Label>
-            <ListView fx:id="seznamVeci" prefHeight="200.0" prefWidth="200.0">
+            <ListView fx:id="seznamVeci" prefHeight="158.0" prefWidth="301.0">
                <VBox.margin>
                   <Insets right="10.0" />
                </VBox.margin></ListView>
+            <Label text="Aktuálna pozícia">
+               <VBox.margin>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="position" minHeight="30.0" prefHeight="30.0" prefWidth="301.0">
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin>
+            </TextArea>
          </children>
          <GridPane.margin>
             <Insets top="30.0" />

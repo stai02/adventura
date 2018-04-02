@@ -109,7 +109,7 @@ public class Postava
             Collections.shuffle(miestnosti); // náhodné triedenie zoznamu povolených miestností
             for (int i = 0; i < miestnosti.size(); i++) {
 				aktualnaMiestnost = miestnosti.get(0);
-			}
+			}            
         }
     }
     
