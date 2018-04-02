@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.HomeController">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="900.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.HomeController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="688.8000122070313" minWidth="10.0" prefWidth="688.8000122070313" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="427.20001220703125" minWidth="0.0" prefWidth="311.9999877929687" />

@@ -56,7 +56,7 @@ public class Start extends Application
 		primaryStage.setTitle("Ghost Story");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-		
+        primaryStage.setResizable(false);
 	}
 }
 
