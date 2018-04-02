@@ -8,10 +8,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Optional;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
@@ -19,6 +23,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -38,6 +43,12 @@ public class HomeController extends GridPane implements Observer {
 	@FXML private MenuItem koniec;
 	@FXML private MenuItem napoveda;
     @FXML private ImageView mapa;
+    @FXML private Rectangle ikona;
+    @FXML private Rectangle wc;
+    @FXML private Rectangle zborovna;
+    @FXML private Rectangle bufet;
+
+    
 
     @FXML private Button button;
 
@@ -75,6 +86,14 @@ public class HomeController extends GridPane implements Observer {
 				hra.zpracujPrikaz("koniec");
 		textovePole.setText(odpoved);
 		vstupniText.setDisable(true);
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("Potvrdiť ukončenie hry");
+		alert.setHeaderText("Ukončiť hru");
+		alert.setContentText("Naozaj chcete ukončiť hru ?");
+		Optional<ButtonType> result = alert.showAndWait();
+		if (result.get() == ButtonType.OK) {
+			System.exit(0);
+		}
 	}
 	
 	@FXML 
@@ -93,17 +112,23 @@ public class HomeController extends GridPane implements Observer {
 	@FXML 
 	public void novaHra() {
 		hra.zpracujPrikaz("koniec");
-		vstupniText.setDisable(true);
-		this.hra = new IHra novahra;
-		IHra hra = new Hra();
-		
-		
+		IHra novaHra = new Hra();
+		seznamMistnosti.getItems().clear();
+		seznamPostav.getItems().clear();
+		seznamVeci.getItems().clear();
+		inicializuj(novaHra);		
 	}
 		
 	
 	
 	public void inicializuj(IHra hra) {
 		this.hra = hra;
+		vstupniText.setDisable(false);
+		bufet.setVisible(true);
+		wc.setVisible(true);
+		zborovna.setVisible(true);
+		ikona.setTranslateX(260);
+		ikona.setTranslateY(250);
 	    textovePole.setText(hra.vratUvitani());
 		seznamMistnosti.getItems().addAll(hra.getHerniPlan().getAktualniProstor().popisVychodu());
 		seznamPostav.getItems().addAll(hra.getHerniPlan().popisPostavVMiestnosti());
@@ -114,10 +139,48 @@ public class HomeController extends GridPane implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		seznamMistnosti.getItems().clear();
-		seznamPostav.getItems().clear();
 		seznamVeci.getItems().clear();
 		seznamMistnosti.getItems().addAll(hra.getHerniPlan().getAktualniProstor().popisVychodu());
 		seznamPostav.getItems().addAll(hra.getHerniPlan().popisPostavVMiestnosti());
 		seznamVeci.getItems().add(hra.getHerniPlan().getAktualniProstor().popisVeciVMiestnosti());
+		if (hra.getHerniPlan().getAktualniProstor().getNazov().equals("prvé poschodie")) {
+			ikona.setTranslateX(220);
+			ikona.setTranslateY(170);
+		}
+		if (hra.getHerniPlan().getAktualniProstor().getNazov().equals("4.C")) {
+			ikona.setTranslateX(260);
+			ikona.setTranslateY(250);
+		}
+		if (hra.getHerniPlan().getAktualniProstor().getNazov().equals("toalety")) {
+			ikona.setTranslateX(140);
+			ikona.setTranslateY(240);
+			bufet.setVisible(false);
+		}
+		if (hra.getHerniPlan().getAktualniProstor().getNazov().equals("zborovňa")) {
+			ikona.setTranslateX(330);
+			ikona.setTranslateY(200);
+		}
+		if (hra.getHerniPlan().getAktualniProstor().getNazov().equals("schody")) {
+			ikona.setTranslateX(283);
+			ikona.setTranslateY(100);
+		}
+		if (hra.getHerniPlan().getAktualniProstor().getNazov().equals("prízemie")) {
+			ikona.setTranslateX(260);
+			ikona.setTranslateY(10);
+		}
+		if (hra.getHerniPlan().getAktualniProstor().getNazov().equals("bufet")) {
+			ikona.setTranslateX(95);
+			ikona.setTranslateY(40);
+			zborovna.setVisible(false);
+		}
+		if (hra.getHerniPlan().getAktualniProstor().getNazov().equals("skrinky")) {
+			ikona.setTranslateX(315);
+			ikona.setTranslateY(-35);
+		}
+		if (hra.getHerniPlan().getAktualniProstor().getNazov().equals("telocvičňa")) {
+			ikona.setTranslateX(470);
+			ikona.setTranslateY(-130);
+			wc.setVisible(false);
+		}
 	}
 }
